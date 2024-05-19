@@ -97,6 +97,27 @@ if(librosAMostrar.length === 0){
 }
 }
 
+//Evento listeners a los botones de detalles
+
+const detalleBotones = document.querySelectorAll(".details-btn");
+detalleBotones.forEach((button, index) => {
+    const libroSeleccionado = libros [index];
+    const modalBody = `
+    <img src="${libroSeleccionado.image}" class="card-img-top" alt"${libroSeleccionado.titulo}">
+    <p><strong>titulo:</strong>${libroSeleccionado.titulo}<p>
+    <p><strong>autor:</strong>${libroSeleccionado.autor}</p>   
+    `;
+    const modalBodyElement = document.getElementById(bookModalBody);
+    modalBodyElement.innerHTML  = modalBody;
+    const bookModal = new bootstrap.Modal(document.getElementById('bookModal'));
+    bookModal.show();
+
+});
+
+
+
+
+
 //Función buscar libros
 
 function busquedaLibros(query){
